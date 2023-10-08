@@ -57,6 +57,7 @@ libc = "0.2.149"
 xdg-user = "0.2.1"
 time = { version = "0.3.30", features = ["macros", "formatting", "local-offset"] }
 sanitize-filename = "0.5.0"
+profiling = { version = "1.0" }
 
 [dependencies.id_tree]
 git = "https://github.com/Drakulix/id-tree.git"
@@ -79,6 +80,7 @@ optional = true
 default = ["systemd"]
 systemd = ["libsystemd"]
 debug = ["egui", "egui_plot", "smithay-egui", "renderdoc", "puffin", "puffin_egui", "anyhow/backtrace"]
+profile-with-tracy = ["profiling/profile-with-tracy"]
 
 [profile.dev]
 lto = "thin"

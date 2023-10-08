@@ -1179,6 +1179,7 @@ fn get_surface_dmabuf_feedback(
 }
 
 impl Surface {
+    #[profiling::function]
     pub fn render_output(
         &mut self,
         api: &mut GpuManager<GbmGlesBackend<GlowRenderer>>,
@@ -1383,6 +1384,7 @@ impl KmsState {
         self.session.change_vt(num).map_err(Into::into)
     }
 
+    #[profiling::function]
     pub fn apply_config_for_output(
         &mut self,
         output: &Output,
@@ -1595,6 +1597,7 @@ impl KmsState {
         unreachable!()
     }
 
+    #[profiling::function]
     pub fn schedule_render(
         &mut self,
         loop_handle: &LoopHandle<'_, State>,
@@ -1676,6 +1679,8 @@ impl KmsState {
                                     screencopy_sessions.as_deref(),
                                 )
                             };
+
+                            profiling::finish_frame!();
 
                             match result {
                                 Ok(_) => {

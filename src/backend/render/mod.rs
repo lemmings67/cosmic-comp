@@ -835,6 +835,7 @@ where
     }
 }
 
+#[profiling::function]
 pub fn render_output<R, Target, OffTarget, Source>(
     gpu: Option<&DrmNode>,
     renderer: &mut R,
@@ -890,6 +891,7 @@ where
     result
 }
 
+#[profiling::function]
 pub fn render_workspace<R, Target, OffTarget, Source>(
     gpu: Option<&DrmNode>,
     renderer: &mut R,
