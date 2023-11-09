@@ -33,7 +33,7 @@ pub mod xwayland;
 fn main() -> Result<()> {
     // setup logger
     logger::init_logger()?;
-    info!("Cosmic starting up!");
+    error!("Cosmic starting up!");
 
     // init event loop
     let mut event_loop = EventLoop::try_new().with_context(|| "Failed to initialize event loop")?;

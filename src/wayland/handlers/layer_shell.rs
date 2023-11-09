@@ -28,6 +28,8 @@ impl WlrLayerShellHandler for State {
         _layer: Layer,
         namespace: String,
     ) {
+        tracing::error!("New layer surface {namespace}");
+
         let seat = self.common.last_active_seat().clone();
         let output = wl_output
             .as_ref()
@@ -53,6 +55,7 @@ impl WlrLayerShellHandler for State {
     }
 
     fn layer_destroyed(&mut self, surface: WlrLayerSurface) {
+        tracing::error!("Layer destroyed: {:?}", surface);
         let maybe_output = self
             .common
             .shell
