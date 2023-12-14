@@ -2,7 +2,7 @@
 
 use crate::{
     backend::render::cursor::CursorState,
-    config::{xkb_config_to_wl, Action, Config, KeyPattern, KeyModifiers},
+    config::{xkb_config_to_wl, Action, Config, KeyModifiers, KeyPattern},
     shell::{
         focus::{target::PointerFocusTarget, FocusDirection},
         grabs::{ResizeEdge, SeatMenuGrabState, SeatMoveGrabState},
