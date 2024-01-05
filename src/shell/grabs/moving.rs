@@ -570,6 +570,7 @@ impl Drop for MoveGrab {
                                 grab_state.window,
                                 Some(window_location.to_local(&workspace.output)),
                                 None,
+                                None,
                             );
 
                             Some((window.clone(), window_location))
@@ -583,6 +584,7 @@ impl Drop for MoveGrab {
                             set.sticky_layer.map_internal(
                                 grab_state.window,
                                 Some(window_location.to_local(&output)),
+                                None,
                                 None,
                             );
 
